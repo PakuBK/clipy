@@ -31,5 +31,14 @@ specify the caption and the timestamps you want to clip from
 wait for clipy to put the rendered videos in the output folder
 for clipy to know which video you want to clip from
 
+### using true cli
+this method is recommended if you want to create only a single clip
+use ```cli.py -h``` to display help
+place your file in the input folder or add the flag -y <link>
+```
+cli.py -c "<caption>" -t "<00:00-00:00>" -cr "credit" (optional) -y <link>
+```
+executing this command will generate a clip in the output folder
+
 
 
