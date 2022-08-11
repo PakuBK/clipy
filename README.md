@@ -11,7 +11,7 @@ clipy can than cut a clip from the video, put text onto it and change it aspect 
 
 ### set up imagemagick
 download Imagemagick from https://imagemagick.org/script/download.php <br/>
-in main.py one line 2 replace the path with your path to magick
+in videocreation.py one line 2 replace the path with your path to magick
 ```Python
 os.environ["IMAGEMAGICK_BINARY"] = r"C:\your\path\magick.exe"
 ```
@@ -30,6 +30,15 @@ start main.py
 specify the caption and the timestamps you want to clip from
 wait for clipy to put the rendered videos in the output folder
 for clipy to know which video you want to clip from
+
+### using true cli
+this method is recommended if you want to create only a single clip
+use ```cli.py -h``` to display help
+place your file in the input folder or add the flag -y <link>
+```
+cli.py -c "<caption>" -t "<00:00-00:00>" -cr "credit" (optional) -y <link>
+```
+executing this command will generate a clip in the output folder
 
 
 
