@@ -4,7 +4,7 @@ from moviepy.editor import *
 from moviepy.video.fx.resize import resize
 from youtube import download_video
 from console import *
-from util import convert_time
+from util import convert_time, check_and_create_dir
 
 
 IMAGEMAGICK_BINARY = r"C:\Program Files\ImageMagick-7.1.0-Q16-HDRI\magick.exe"
@@ -12,7 +12,6 @@ IMAGEMAGICK_BINARY = r"C:\Program Files\ImageMagick-7.1.0-Q16-HDRI\magick.exe"
 
 def render_video(folder: str, caption: str, timestamp: tuple, credit: str):
     """
-
     :param path: path to the video folder
     :param caption: caption put on the video
     :param timestamp: a tuple of timestamps in seconds to cut the clip
@@ -41,6 +40,9 @@ def render_video(folder: str, caption: str, timestamp: tuple, credit: str):
     result = CompositeVideoClip([video, caption_text_clip, credit_text], size=(1024, 1920))
     result.duration = end-begin
 
+    # check if output folder exists
+    check_and_create_dir("output")
+
     print_step("[cyan]video is rendering, please wait[/cyan]")
     file_name = caption.replace(" ", "_")+f"_{str(begin)}-{str(end)}"
     try:
@@ -50,6 +52,8 @@ def render_video(folder: str, caption: str, timestamp: tuple, credit: str):
 
     video.close()
     # move file to storage
+    # check if storage folder exists
+    check_and_create_dir("storage")
     print_step("moved input file in storage folder")
     os.rename(path, "storage/" + video_files[0])
 
@@ -85,6 +89,7 @@ def prepare():
         print_substep(" downloading video...")
         download_video(url)
     else:
+        check_and_create_dir("input")
         confirm_by_user(" is your video file in the input folder?")
 
     clip_id = 0
