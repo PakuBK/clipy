@@ -16,7 +16,7 @@ in main.py one line 2 replace the path with your path to magick
 os.environ["IMAGEMAGICK_BINARY"] = r"C:\your\path\magick.exe"
 ```
 
-### installtion for windows
+### installation for windows
 
 1. clone the repo
 2. open cmd and type 'python -m venv venv' to create a virtual environment
