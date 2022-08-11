@@ -1,12 +1,7 @@
-import os
-os.environ["IMAGEMAGICK_BINARY"] = r"C:\Program Files\ImageMagick-7.1.0-Q16-HDRI\magick.exe"
 from videocreation import render_video
 from youtube import download_video
 from console import *
 from util import convert_time, check_and_create_dir
-
-
-IMAGEMAGICK_BINARY = r"C:\Program Files\ImageMagick-7.1.0-Q16-HDRI\magick.exe"
 
 
 def gather_clips_information() -> list:
@@ -14,8 +9,8 @@ def gather_clips_information() -> list:
         caption = ask_user("caption")
         timestamp = ask_user("timestamp", default="hh:mm:ss-hh:mm:ss")
         timestamp = (convert_time(time) for time in timestamp.split("-"))
-        credits = ask_user("credit (placed at the bottom)")
-        return caption, timestamp, credits
+        credit = ask_user("credit (placed at the bottom)")
+        return caption, timestamp, credit
 
     multiple_clips = confirm_by_user(" do you want to create multiple clips?")
 

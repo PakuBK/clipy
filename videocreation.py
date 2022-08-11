@@ -8,9 +8,10 @@ from util import check_and_create_dir
 
 def render_video(folder: str, caption: str, timestamp: tuple, credit: str):
     """
-    :param path: path to the video folder
+    :param folder: path to the video folder
     :param caption: caption put on the video
     :param timestamp: a tuple of timestamps in seconds to cut the clip
+    :param credit: bottom text of the video
     """
     begin, end = timestamp
     if end - begin > 60:
@@ -36,7 +37,6 @@ def render_video(folder: str, caption: str, timestamp: tuple, credit: str):
     result = CompositeVideoClip([video, caption_text_clip, credit_text], size=(1024, 1920))
     result.duration = end-begin
 
-    # check if output folder exists
     check_and_create_dir("output")
 
     print_step("[cyan]video is rendering, please wait[/cyan]")
@@ -47,8 +47,7 @@ def render_video(folder: str, caption: str, timestamp: tuple, credit: str):
         print_error("something went wrong while rendering the video")
 
     video.close()
-    # move file to storage
-    # check if storage folder exists
+
     check_and_create_dir("storage")
     print_step("moved input file in storage folder")
     os.rename(path, "storage/" + video_files[0])
