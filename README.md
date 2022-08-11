@@ -26,13 +26,11 @@ os.environ["IMAGEMAGICK_BINARY"] = r"C:\your\path\magick.exe"
 
 ### usage
 put the video file in the input folder
-start main.py
-specify the caption and the timestamps you want to clip from
+start main.py, specify the caption and the timestamps you want to clip from
 wait for clipy to put the rendered videos in the output folder
-for clipy to know which video you want to clip from
 
-### using true cli
-this method is recommended if you want to create only a single clip
+### using true cli(py)
+this method is recommended if you want to only create a single clip
 use ```cli.py -h``` to display help
 place your file in the input folder or add the flag -y <link>
 ```
