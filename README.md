@@ -1,5 +1,13 @@
 # clipy
-a command line interface that can creates clips targeted for mobile plattforms
+a command line interface that can creates clips targeted at mobile plattforms.
+
+### intention of clipy
+as a modern content creator you cannot come around tiktok, reels and youtube shorts. clipys intention is to make it easier for content creators to clip funny or interesting parts of their content and make it tiktok ready in seconds.
+
+### what clipy automates
+you have to tell clipy the caption and where to cut the clip, thats it!
+clipy can than cut a clip from the video, put text onto it and change it aspect ratio to 9:16
+<br/>
 
 ### set up imagemagick
 download Imagemagick from https://imagemagick.org/script/download.php <br/>
@@ -17,4 +25,11 @@ os.environ["IMAGEMAGICK_BINARY"] = r"C:\your\path\magick.exe"
 5. pip install -r requirements.txt
 
 ### usage
-comming soon
+put the video file in the input folder
+start main.py
+specify the caption and the timestamps you want to clip from
+wait for clipy to put the rendered videos in the output folder
+for clipy to know which video you want to clip from
+
+
+
