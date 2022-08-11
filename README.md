@@ -11,7 +11,7 @@ clipy can than cut a clip from the video, put text onto it and change it aspect 
 
 ### set up imagemagick
 download Imagemagick from https://imagemagick.org/script/download.php <br/>
-in main.py one line 2 replace the path with your path to magick
+in videocreation.py one line 2 replace the path with your path to magick
 ```Python
 os.environ["IMAGEMAGICK_BINARY"] = r"C:\your\path\magick.exe"
 ```
