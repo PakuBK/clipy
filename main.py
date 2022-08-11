@@ -14,7 +14,8 @@ def gather_clips_information() -> list:
         caption = ask_user("caption")
         timestamp = ask_user("timestamp", default="hh:mm:ss-hh:mm:ss")
         timestamp = (convert_time(time) for time in timestamp.split("-"))
-        return caption, timestamp
+        credits = ask_user("credit (placed at the bottom)")
+        return caption, timestamp, credits
 
     multiple_clips = confirm_by_user(" do you want to create multiple clips?")
 
@@ -44,8 +45,8 @@ def prepare():
         confirm_by_user(" is your video file in the input folder?")
 
     clip_id = 0
-    for caption, timestamp in clips:
-        render_video("input/", caption, timestamp, credit="youtube: jugendtreff")
+    for caption, timestamp, credit in clips:
+        render_video("input/", caption, timestamp, credit)
         clip_id += 1
 
 
