@@ -84,12 +84,12 @@ def prepare():
 
     should_download_video = confirm_by_user(" do you want download the video from youtube?")
 
+    check_and_create_dir("input")
     if should_download_video:
         url = ask_user(" paste the youtube link here")
         print_substep(" downloading video...")
         download_video(url)
     else:
-        check_and_create_dir("input")
         confirm_by_user(" is your video file in the input folder?")
 
     clip_id = 0
