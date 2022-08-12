@@ -38,5 +38,10 @@ cli.py -c "<caption>" -t "<00:00-00:00>" -cr "credit" (optional) -y <link>
 ```
 executing this command will generate a clip in the output folder
 
+### issues and limitations
+- only .mp4 files are currently supported
+- sometimes the youtube download fails
+- font size, color or position cannot be modified
+
 
 
